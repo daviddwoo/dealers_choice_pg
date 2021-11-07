@@ -1,0 +1,55 @@
+DROP TABLE IF EXISTS details;
+DROP TABLE IF EXISTS players;
+
+CREATE TABLE players(
+    id SERIAL PRIMARY KEY,
+    name TEXT DEFAULT NULL
+);
+
+CREATE TABLE details(
+    id SERIAL PRIMARY KEY,
+    player_id INTEGER REFERENCES players(id) NOT NULL,
+    img TEXT DEFAULT NULL,
+    postImg TEXT DEFAULT NULL,
+    position TEXT DEFAULT NULL,
+    age VARCHAR(3) DEFAULT NULL,
+    height TEXT DEFAULT NULL,
+    weight TEXT DEFAULT NULL,
+    content TEXT DEFAULT NULL
+);
+
+INSERT INTO players(name) VALUES ('RJ Barrett');
+INSERT INTO players(name) VALUES ('Alec Burks');
+INSERT INTO players(name) VALUES ('Evan Fournier');
+INSERT INTO players(name) VALUES ('Taj Gibson');
+INSERT INTO players(name) VALUES ('Quentin Grimes');
+INSERT INTO players(name) VALUES ('Kevin Knox');
+INSERT INTO players(name) VALUES ('Miles McBride');
+INSERT INTO players(name) VALUES ('Nerlens Noel');
+INSERT INTO players(name) VALUES ('Immanuel Quickley');
+INSERT INTO players(name) VALUES ('Julius Randle');
+INSERT INTO players(name) VALUES ('Mitchell Robinson');
+INSERT INTO players(name) VALUES ('Derrick Rose');
+INSERT INTO players(name) VALUES ('Luka Samanic');
+INSERT INTO players(name) VALUES ('Wayne Selden');
+INSERT INTO players(name) VALUES ('Jericho Sims');
+INSERT INTO players(name) VALUES ('Obi Toppin');
+INSERT INTO players(name) VALUES ('Kemba Walker');
+
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='RJ Barrett'), './mainImgs/RJ.png', './postImgs/RJ2.jpeg', 'Shooting Guard', '21', '6-6', '214lbs', 'Rowan Alexander "RJ" Barrett Jr. (born June 14, 2000) is a Canadian professional basketball player for the New York Knicks of the National Basketball Association (NBA). A shooting guard and small forward, he was selected third overall in the 2019 NBA Draft by the New York Knicks after one year with the Duke Blue Devils program under coach Mike Krzyzewski.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Alec Burks'), './mainImgs/alec.png', './postImgs/alec2.jpeg', 'Shooting Guard', '30', '6-6', '214lbs', 'Alec Burks (born July 20, 1991) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). He was selected by the Utah Jazz as the 12th overall pick in the 2011 NBA draft. Burks primarily plays the shooting guard position.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Evan Fournier'), './mainImgs/evan.png', './postImgs/evan2.jpeg', 'Shooting Guard', '29', '6-6', '205lbs', 'Evan Mehdi Fournier (born 29 October 1992) is a French professional basketball player for the New York Knicks of the National Basketball Association (NBA). He played junior basketball at the French INSEP academy from 2007 to 2009.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Taj Gibson'), './mainImgs/taj.png', './postImgs/taj2.jpg', 'Center', '36', '6-9', '232lbs', 'Taj Jami Gibson (born June 24, 1985) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). Gibson played college basketball for the USC Trojans and was selected 26th overall by the Chicago Bulls in the 2009 NBA draft.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Quentin Grimes'), './mainImgs/grimes.png', './postImgs/grimes2.jpeg', 'Shooting Guard', '21', '6-4', '210lbs', 'Quentin Marshall Grimes (born May 8, 2000) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). He played college basketball for the Kansas Jayhawks and the Houston Cougars.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Kevin Knox'), './mainImgs/knox.png', './postImgs/knox2.jpeg', 'Small Forward', '20', '6-7', '215lbs', 'Kevin Devon Knox II (born August 11, 1999) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). He played college basketball for the Kentucky Wildcats and attended high school at Tampa Catholic High School.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Miles McBride'), './mainImgs/miles.png', './postImgs/mcbride2.jpeg', 'Point Guard', '21', '6-1', '195lbs', 'Miles James "Deuce" McBride (born September 8, 2000) is an American basketball player for the New York Knicks of the National Basketball Association (NBA). He played college basketball for the West Virginia Mountaineers.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Nerlens Noel'), './mainImgs/noel.png', './postImgs/noel2.jpeg', 'Center', '27', '6-11', '220lbs', 'Nerlens Noel (born April 10, 1994) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). His collegiate basketball career ended in his first season with a tear of his anterior cruciate ligament (ACL) at the University of Kentucky. Noel was drafted with the sixth overall pick in the 2013 NBA draft by the New Orleans Pelicans. His rights were later traded to the Philadelphia 76ers.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Immanuel Quickley'), './mainImgs/quick.png', './postImgs/quickley2.jpeg', 'Shooting Guard', '22', '6-3', '190lbs', 'Immanuel Jaylen Quickley (born June 17, 1999) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). He played college basketball for the Kentucky Wildcats.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Julius Randle'), './mainImgs/julius.png', './postImgs/julius2.jpeg', 'Power Forward', '26', '6-8', '250lbs', 'Julius Deion Randle (born November 29, 1994) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). In his second season with the Knicks in 2020–21, he was a first-time NBA All-Star and was awarded the NBA Most Improved Player Award.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Mitchell Robinson'), './mainImgs/mitchell.png', './postImgs/mitchell2.jpeg', 'Center', '23', '6-6', '214lbs', 'Mitchell Robinson III (born April 1, 1998) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). He was selected with the 36th overall pick in the 2018 NBA draft. Before beginning his professional career, he gained national coverage for withdrawing from his commitment to attend Western Kentucky University to instead dedicate the entire 2017–18 season for training on his own, being the first player to make such a decision.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Derrick Rose'), './mainImgs/derrick.png', './postImgs/rose2.jpeg', 'Point Guard', '33', '6-2', '200lbs', 'Derrick Martell Rose (born October 4, 1988) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). He played one year of college basketball for the Memphis Tigers before being drafted first overall by his hometown Chicago Bulls in the 2008 NBA draft. He was named the NBA Rookie of the Year and also became the youngest player to win the NBA Most Valuable Player Award in 2011 at age 22.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Luka Samanic'), './mainImgs/luka.png', './postImgs/luka2.jpeg', 'Power Forward', '21', '6-10', '227lbs', 'Luka Šamanić (born 9 January 2000) is a Croatian professional basketball player for the New York Knicks of the National Basketball Association (NBA), on a two-way contract with the Westchester Knicks of the NBA G League. A power forward, he was drafted 19th overall by the San Antonio Spurs in the 2019 NBA draft.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Wayne Selden'), './mainImgs/selden.png', './postImgs/selden2.jpeg', 'Forward', '27', '6-4', '232lbs', 'Wayne Anthony Selden Jr. (born September 30, 1994) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). He played college basketball for the Kansas Jayhawks.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Jericho Sims'), './mainImgs/sims.png', './postImgs/sims2.jpeg', 'Center', '23', '6-9', '250lbs', 'Jericho Eduard Sims (born October 20, 1998) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA), on a two-way contract with the Westchester Knicks of the NBA G League. He played college basketball for the Texas Longhorns.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Obi Toppin'), './mainImgs/obi.png', './postImgs/obi2.jpeg', 'Power Forward', '23', '6-9', '220lbs', 'Obadiah Richard "Obi" Toppin Jr. (born March 4, 1998) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). A power forward, he played college basketball for the Dayton Flyers.');
+INSERT INTO details(player_id, img, postImg, position, age, weight, height, content) VALUES((SELECT id FROM players WHERE name='Kemba Walker'), './mainImgs/kemba.png', './postImgs/kemba2.jpeg', 'Point Guard', '31', '6-0', '184lbs', 'Kemba Hudley Walker (born May 8, 1990) is an American professional basketball player for the New York Knicks of the National Basketball Association (NBA). Walker was picked ninth overall by the Charlotte Bobcats in the 2011 NBA draft. He grew up in The Bronx, New York City. After graduating from Rice High School in 2008, he played college basketball for the Connecticut Huskies. In their 2010–11 season, Walker was the nation second-leading scorer and was named consensus first-team All-American; he also led the Huskies to the 2011 NCAA championship and claimed the tournament Most Outstanding Player award. Walker is a four-time NBA All-Star.');

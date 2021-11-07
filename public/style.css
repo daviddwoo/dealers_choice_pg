@@ -1,0 +1,124 @@
+html {
+    background-color: rgb(29, 100, 194);
+    background-size: cover;
+    color: whitesmoke;
+    font-family: "Tungsten light",sans-serif;
+}  
+
+h1, h2 {
+    text-align: center;
+}
+
+#knickslogo {
+    text-align: center;
+}
+
+#logo {
+    width: 300px;
+    height: 250px;
+}
+
+a {
+    background-color: rgb(29, 100, 194);
+    color: whitesmoke;
+    height: 200px;
+}
+
+.main {
+    text-align: center;
+}
+
+.player {
+    background-color: black;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 260px;
+    height: 230px;
+    margin: 1%;
+    border-radius: 20%;
+}
+
+#imgPlayer {
+    background-color: black;
+    display: inline-flex;
+    margin-top: 16%;
+    width: 260px;
+    height: 190px;
+    border-radius: 20%;
+    border: 3px solid orange;
+}
+
+#imgPlayer:hover {
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease-out;
+}
+
+.playerText {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#text {
+    width: 260px;
+    text-align: center;
+    position: absolute;
+}
+
+.playerDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerImage {
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+#postImg {
+    object-fit: cover; 
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 5px solid orange;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    position: fixed;
+}
+
+#btn {
+    background-color: whitesmoke;
+    border: black;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    border-radius: 1rem 1rem 1rem 1rem;
+}
+
+#btn:hover {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.posth1 {
+    line-height: 3rem;
+    text-align: center;
+    width: 50%;
+}
+
+span {
+    text-decoration: underline;
+}
+
+#rosterbtn {
+    height: 50px;
+}
